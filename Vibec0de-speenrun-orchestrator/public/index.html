@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speedrun Orchestrator UI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Speedrun Orchestrator</p>
+          <h1>Test every tool from one dashboard</h1>
+          <p class="lede">
+            Generate sprint plans, clip outlines, and doc summaries, all from localhost.
+            Forms submit directly to the orchestrator tools so you can validate flows fast.
+          </p>
+        </div>
+        <div class="hero-meta">
+          <span class="badge">Local only</span>
+          <span class="badge secondary">API prefix: /api</span>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel panel-span" id="workflow-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Workflow Orchestrator</h2>
+              <p>Run analyzeDocs → speedrun plan → clip outline in one step.</p>
+            </div>
+            <button type="button" class="ghost" data-fill="workflow">
+              Load sample
+            </button>
+          </div>
+          <form id="workflow-form" class="stack">
+            <label>
+              <span>Documentation URL</span>
+              <input
+                name="url"
+                type="url"
+                placeholder="https://xmcp.dev/docs"
+                required
+              />
+            </label>
+            <label>
+              <span>Product Name</span>
+              <input name="productName" placeholder="XMCP Speedrun" required />
+            </label>
+            <label>
+              <span>Stack / Constraints</span>
+              <textarea
+                name="stack"
+                rows="3"
+                placeholder="Next.js App Router + TypeScript + MCP server transport"
+                required
+              ></textarea>
+            </label>
+            <label>
+              <span>Main Win</span>
+              <textarea
+                name="mainWin"
+                rows="2"
+                placeholder="Bootstrapped a schema-first MCP server and shipped the hero tool."
+                required
+              ></textarea>
+            </label>
+            <label>
+              <span>Main Pain</span>
+              <textarea
+                name="mainPain"
+                rows="2"
+                placeholder="Waiting on brittle demos that ignore the doc guidance."
+                required
+              ></textarea>
+            </label>
+            <button type="submit">Run workflow</button>
+          </form>
+          <div id="workflow-result" class="result workflow-result"></div>
+        </section>
+
+        <section class="panel" id="plan-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Speedrun Plan</h2>
+              <p>Create the core 30–45 minute outline for an episode.</p>
+            </div>
+            <button type="button" class="ghost" data-fill="plan">
+              Load sample
+            </button>
+          </div>
+          <form id="plan-form" class="stack">
+            <label>
+              <span>Product Name</span>
+              <input name="productName" placeholder="Supabase Realtime" required />
+            </label>
+            <label>
+              <span>Stack / Constraints</span>
+              <textarea
+                name="stack"
+                placeholder="Next.js App Router + TypeScript + Vercel Edge Runtime"
+                rows="3"
+                required
+              ></textarea>
+            </label>
+            <button type="submit">Generate plan</button>
+          </form>
+          <div id="plan-result" class="result"></div>
+        </section>
+
+        <section class="panel" id="clip-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Clip Outline</h2>
+              <p>Spin up 3–5 hooks pulled from the session.</p>
+            </div>
+            <button type="button" class="ghost" data-fill="clips">
+              Load sample
+            </button>
+          </div>
+          <form id="clip-form" class="stack">
+            <label>
+              <span>Product Name</span>
+              <input name="productName" placeholder="Vercel Visual Editing" required />
+            </label>
+            <label>
+              <span>Main Win</span>
+              <textarea
+                name="mainWin"
+                placeholder="Launched a multiplayer visual editing surface in one commit."
+                rows="2"
+                required
+              ></textarea>
+            </label>
+            <label>
+              <span>Main Pain</span>
+              <textarea
+                name="mainPain"
+                placeholder="Coordinating approvals takes forever without shared previews."
+                rows="2"
+                required
+              ></textarea>
+            </label>
+            <button type="submit">Outline clips</button>
+          </form>
+          <div id="clip-result" class="result"></div>
+        </section>
+
+        <section class="panel" id="docs-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Docs Analyzer</h2>
+              <p>Summarize a docs URL to prep study notes.</p>
+            </div>
+            <button type="button" class="ghost" data-fill="docs">
+              Load sample
+            </button>
+          </div>
+          <form id="docs-form" class="stack">
+            <label>
+              <span>Documentation URL</span>
+              <input
+                name="url"
+                type="url"
+                placeholder="https://xmcp.dev/docs"
+                required
+              />
+            </label>
+            <button type="submit">Analyze docs</button>
+          </form>
+          <div id="docs-result" class="result"></div>
+        </section>
+
+        <section class="panel" id="greet-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Quick Greet</h2>
+              <p>Smoke-test the smallest tool end-to-end.</p>
+            </div>
+          </div>
+          <form id="greet-form" class="stack">
+            <label>
+              <span>Your Name</span>
+              <input name="name" placeholder="Speedrunner" required />
+            </label>
+            <button type="submit">Send greeting</button>
+          </form>
+          <div id="greet-result" class="result"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
+

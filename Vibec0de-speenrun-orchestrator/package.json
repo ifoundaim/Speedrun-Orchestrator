@@ -1,0 +1,25 @@
+{
+  "name": "Vibec0de-speenrun-orchestrator",
+  "version": "0.1.0",
+  "description": "An xmcp application with tool syntax",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "xmcp build",
+    "dev": "xmcp dev",
+    "start": "node dist/http.js",
+    "ui": "tsx src/server/uiServer.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "xmcp": "0.4.0",
+    "zod": "3.24.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6"
+  }
+}
